@@ -1,0 +1,38 @@
+{% extends 'a_base.html' %}
+{% block title %}Upload File{% endblock title %}
+{% block body %}
+<div class="container" style="height: 10% ;  width: 30%;  padding-top: 50px;">
+      {% if messages %}
+      {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+      {% endfor %}
+    {% endif %}
+    <form method="post" action="/uploadfile" enctype="multipart/form-data">
+  <div class="form-group">
+      <h1>Upload File</h1>
+    <label for="exampleFormControlFile1"><h3>Only CSV OR XLS(Excel Files)</h3></label>
+    {% csrf_token %}
+    <br>
+
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+</div>
+
+<div class="container">
+<a class="btn btn-primary" href="/filename" role="button" style="position: fixed;
+  right: 0;
+  width: 100px;
+  border: 3px solid #73AD21;">Next</a>
+</div>
+
+{% endblock body %}

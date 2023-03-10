@@ -1,0 +1,35 @@
+{% extends 'a_base.html' %}
+{% block title %}File Name{% endblock title %}
+{% block body %}
+
+<div class="container" style="height: 10% ;  width: 30%;  padding-top: 50px;">
+    <div class="container">
+<a class="btn btn-primary" href="/uploadfile" role="button" style="position: fixed;
+  right: 0;
+  width: 100px;
+  border: 3px solid #73AD21;">Upload File</a>
+</div>
+
+
+    <form method="post" action="/filename">
+                {% csrf_token %}
+            <label for="validationCustom01" style="margin: 10px" ><h1>Select the file</h1></label>
+            <select class="form-control form-control-sm" name="file" >
+                {% for file in file_name %}
+                <option>{{ file }}</option>
+                {% endfor %}
+            </select>
+        <button type="submit" class="btn btn-primary" style="margin: 10px">Submit</button>
+
+    </form>
+</div>
+
+{% if next == "show" %}
+<div class="container">
+<a class="btn btn-primary" href="/show" role="button" style="position: fixed;
+  right: 0;
+  width: 100px;
+  border: 3px solid #73AD21;">Next</a>
+</div>
+{% endif %}
+    {% endblock body %}

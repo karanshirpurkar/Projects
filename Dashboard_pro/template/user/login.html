@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Sign In{% endblock title %}
+{% block body %}
+
+
+  <div class="container fluid" style="height: 20%; width: 65%">
+
+    <br>
+    {% if messages %}
+      {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+      {% endfor %}
+    {% endif %}
+    <h1>Sign In</h1>
+      <form action="/login" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Username</label>
+        <input type="text" class="form-control"  name="username" placeholder="User Name">
+      </div>
+      {% csrf_token %}
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+  </div>
+{% if next == "login" %}
+<div class="container">
+<a class="btn btn-primary" href="/uploadfile" role="button" style="position: fixed;
+  right: 0;
+  width: 100px;
+  border: 3px solid #73AD21;">Next</a>
+</div>
+{% endif %}
+
+{% endblock body %}

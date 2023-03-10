@@ -1,0 +1,10 @@
+{% extends 'a_base.html' %}
+{% block title %}Line Chart{% endblock title %}
+{% block body %}
+{% for i in charts %}
+<div class="container">
+    {{i | safe}}
+</div>
+{% endfor %}
+
+{% endblock body %}

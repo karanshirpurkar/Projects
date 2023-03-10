@@ -1,0 +1,44 @@
+{% extends 'a_base.html' %}
+{% block title %}Line Chart{% endblock title %}
+{% block body %}
+<div class="container" style="height: 10% ;  width: 30%;  padding-top: 50px;">
+    <form method="post" action="/barchart">
+        <div class="form-group">
+            <label for="validationCustom01">Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Title">
+        </div>
+
+        <label for="validationCustom01" style="margin: 10px">X - Axis</label>
+        <select class="form-control form-control-sm" name="x">
+            {% for key in keys %}
+            <option>{{ key }}</option>
+            {% endfor %}
+        </select>
+        {% csrf_token %}
+        <label for="validationCustom01" style="margin: 10px">Y - Axis</label>
+        <select class="form-control form-control-sm" name="y" style="">
+            {% for key in keys %}
+            <option>{{ key }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="validationCustom01" style="margin: 10px"><strong>Color</strong>please select between above selected
+            axis: </label>
+        <select class="form-control form-control-sm" name="color" style="">
+            {% for key in keys %}
+            <option>{{ key }}</option>
+            {% endfor %}
+        </select>
+
+
+        <button type="submit" class="btn btn-primary" style="margin: 10px">Submit</button>
+    </form>
+</div>
+<div class="container">
+    <h3>{{ hint | safe }}</h3>
+</div>
+
+<div class="container">
+    {{fig | safe}}
+</div>
+{% endblock body %}

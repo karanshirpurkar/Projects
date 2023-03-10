@@ -1,0 +1,27 @@
+{% extends 'a_base.html' %}
+{% block title %}Preview{% endblock title %}
+{% block body %}
+
+
+
+<div class="container"
+    style="width:70%; height:700px; line-height: 3em; overflow:scroll; border: thin #000 solid; padding: 5px;">
+    {{db | safe}}
+</div>
+
+<div class="container" style="height: 10% ;  width: 30%;  padding-top: 50px;">
+    <form method="post" action="/show">
+        <label for="validationCustom01" style="margin: 10px">Sort</label>
+        <select class="form-control form-control-sm" name="x">
+            {% for key in keys %}
+            <option>{{ key }}</option>
+            {% endfor %}
+        </select>
+        {% csrf_token %}
+
+
+        <button type="submit" class="btn btn-primary" style="margin: 10px">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}

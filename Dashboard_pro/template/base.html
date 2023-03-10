@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #a3f2fd;">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">DashBoard Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/feature">Feature</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/service">Service</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <a class="btn btn-outline-primary" href="/register">Sign Up</a>
+                    <h3 style="color:#a3f2fd;"><strong> /</strong></h3>
+                    <a class="btn btn-outline-success" href="/login">Sign In</a>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <!--    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">-->
+
+    <!--        <div class="container-fluid">-->
+    <!--            <a class="navbar-brand" href="/home">DashBoard Pro</a>-->
+    <!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"-->
+    <!--                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"-->
+    <!--                aria-label="Toggle navigation">-->
+    <!--                <span class="navbar-toggler-icon"></span>-->
+    <!--            </button>-->
+    <!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+    <!--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+    <!--                    <li class="nav-item">-->
+    <!--                        <a class="nav-link active" aria-current="page" href="/feature">Feature</a>-->
+    <!--                    </li>-->
+    <!--                    <li class="nav-item">-->
+    <!--                        <a class="nav-link" href="/filename">Select File</a>-->
+    <!--                    </li>-->
+    <!--                    <li class="nav-item">-->
+    <!--                        <a class="nav-link" href="/show">Preview</a>-->
+    <!--                    </li>-->
+
+    <!--                          <li class="nav-item dropdown">-->
+    <!--                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+    <!--                        Chart-->
+    <!--                      </a>-->
+    <!--                      <ul class="dropdown-menu">-->
+    <!--                        <li><a class="dropdown-item" href="/linechart">Line Chart</a></li>-->
+    <!--                        <li><a class="dropdown-item" href="/scatterchart">Scatter Chart</a></li>-->
+    <!--                        <li><a class="dropdown-item" href="/piechart">Pie Chart</a></li>-->
+    <!--                        <li><a class="dropdown-item" href="/boxchart">Bar Chart</a></li>-->
+    <!--                        <li><a class="dropdown-item" href="/boxchart">Box Chart</a></li>-->
+    <!--                        <li><a class="dropdown-item" href="/violinechart">Violine Chart</a></li>-->
+    <!--                      </ul>-->
+    <!--                    </li>-->
+
+
+    <!--                         <li class="nav-item dropdown">-->
+    <!--                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+    <!--                        3D Chart-->
+    <!--                      </a>-->
+    <!--                      <ul class="dropdown-menu">-->
+    <!--                        <li><a class="dropdown-item" href="/line3dchart">Line Chart</a></li>-->
+    <!--                        <li><a class="dropdown-item" href="/scatter3dchart">Scatter Chart</a></li>-->
+    <!--                      </ul>-->
+    <!--                    </li>-->
+    <!--                    <li class="nav-item">-->
+    <!--                        <a class="nav-link active" aria-current="page" href="/dashboard"><strong></strong>Dashboard</strong>     </a>-->
+    <!--                    </li>-->
+    <!--                </ul>-->
+    <!--            </div>-->
+    <!--        </div>-->
+
+    <!--    </nav>-->
+
+
+
+    {% block body%} {% endblock body%}
+</body>
+
+</html>
